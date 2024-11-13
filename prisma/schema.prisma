@@ -1,0 +1,42 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Market {
+  id       Int    @id @default(autoincrement())
+  pairSale String
+  purChase String
+}
+
+model StonfiInfo {
+  id              Int     @id @default(autoincrement())
+  pool_addr       String  @unique
+  token_0_address String
+  token_1_address String
+  token_0_name    String?
+  token_1_name    String?
+  token_0_reserve String
+  token_1_reserve String
+  lpFee           String
+  protocolFee     String
+  refFee          String
+}
+
+model DedustInf {
+  id              Int     @id @default(autoincrement())
+  pool_addr       String  @unique
+  token_0_address String
+  token_1_address String
+  token_0_name    String?
+  token_1_name    String?
+  token_0_type    String
+  token_1_type    String
+  token_0_reserve String
+  token_1_reserve String
+  fee             String
+}
