@@ -32,6 +32,13 @@
 $ npm install
 ```
 
+## init bd
+
+```bash
+# init bd
+$ docker-compose up -d
+```
+
 ## Compile and run the project
 
 ```bash
